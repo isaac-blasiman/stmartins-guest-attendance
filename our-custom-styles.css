@@ -1,3 +1,14 @@
 .blue-on-hover:hover {
     color: slategray;
 }
+
+#checkbox-container {
+    font-size: 100px;
+    position: relative;
+    left: 89%;
+}
+
+#round-checkbox {
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+}

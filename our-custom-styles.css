@@ -13,3 +13,21 @@
     padding-left: 0.3em;
     color: #ffffff;
 }
+
+.custom-tile-button {
+    height: 200px;
+    width: 200px;
+}
+
+#adult-status-button-content{
+    padding-top: 23px;
+}
+
+#child-status-button-content{
+    padding-top: 64px;
+}
+
+#responsive-spacing{
+    display: inline-block;
+    width: 10%;
+}

@@ -2,7 +2,6 @@ var myCanvas = document.getElementById("active-signature-box");
 var canvasContext = myCanvas.getContext("2d");
 
 function ouch(the_element, the_event) {
-    // alert("ouch! \n" + the_element + "\n" + the_event);
     canvasContext.beginPath();
     canvasContext.rect(10,20,100,50);
     canvasContext.stroke();

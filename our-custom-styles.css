@@ -15,19 +15,47 @@
 }
 
 .custom-tile-button {
-    height: 200px;
-    width: 200px;
+    width: 35vw;
+	height: 35vw;
 }
 
 #adult-status-button-content{
-    padding-top: 23px;
+    position: relative;
+	top: 6vw
+}
+
+#adult-status-button-content p{
+    position: relative;
+	top: 6vw
 }
 
 #child-status-button-content{
-    padding-top: 64px;
+    position: relative;
+	top: 14vw
+}
+
+#child-status-button-content p{
+    position: relative;
+	top: 6vw
 }
 
 #responsive-spacing{
     display: inline-block;
     width: 10%;
+}
+
+.fa-male, .fa-child{
+	color: #00a9ff;
+}
+
+.fa-female{
+	color: #ff99cc;
+}
+
+.fa-5x{
+	font-size: 17vw;
+}
+
+.fa-3x{
+	font-size: 9vw;
 }

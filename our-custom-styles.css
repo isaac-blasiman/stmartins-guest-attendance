@@ -2,6 +2,16 @@
     color: slategray;
 }
 
+.centered {
+    text-align: center;
+}
+
+#centered-brand {
+    margin-left: auto;
+    margin-right: auto;
+    color: red;
+}
+
 #checkbox-container {
     font-size: 100px;
     position: relative;

@@ -81,6 +81,7 @@
 
 .starter-template ul{
     list-style-type: none;
+    padding-left: 0vw;
 }
 
 .starter-template li{

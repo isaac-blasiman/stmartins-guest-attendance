@@ -44,6 +44,10 @@
     width: 10%;
 }
 
+.ul-centered {
+    margin-left: auto;
+}
+
 .fa-male, .fa-child{
 	color: #00a9ff;
 }

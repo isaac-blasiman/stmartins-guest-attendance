@@ -44,11 +44,14 @@
     </nav>
 
     <div class="container" id="container">
-        <canvas id="active-signature-box2" onmousedown="ouch(this, event)" width="400" height="400"></canvas>
         <div id="checkbox-container">
             <a href="#" class="badge badge-pill badge-success" id="round-checkbox"><i class="fa fa-check" aria-hidden="true"></i></a>
         </div>
     </div><!-- /.container -->  
     
+    <!-- Link to signature_pad utility by szimek. See signature_pad-MIT-License file in signature_pad-master dir for more information -->
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script> <!-- probably can replace this with a link to the signature_pad-master\signature_pad-master\src\signature_pad.js file -->
+    <!-- Our custom JavaScript -->
     <script src="custom-js-scripts.js"></script>
+    
 </body>

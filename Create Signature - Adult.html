@@ -21,10 +21,24 @@
     <!-- Our own custom CSS styles -->
     <link href="our-custom-styles.css" rel="stylesheet">
     
-    <!-- Importing the modified signature_pad functionality, based on the suggestion by
-    https://stackoverflow.com/users/3901086/shadab-k at 
-    https://stackoverflow.com/questions/36387676/is-it-possible-to-reuse-html-like-a-template-on-multiple-pages-->
-    <link rel="import" href="signature_pad-master\signature_pad-master\example\index-modified.html">
+    <!-- ### This content within this block is modified from code copyrighted 2018 by Szimon Novak under the MIT License, -->
+    <!-- and is therefore itself under the MIT license. ###-->
+
+    <!-- Link to a modified version of the signature_pad code -->
+    <link rel="stylesheet" href="signature_pad-master/signature_pad-master/example/css/signature-pad-modified.css">
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39365077-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- ### End of MIT Licensed content ### -->
     
   </head>
 
@@ -48,14 +62,36 @@
       </div>
     </nav>
 
+    <!-- ### This content within this block is modified from code copyrighted 2018 by Szimon Novak under the MIT License, -->
+    <!-- and is therefore itself under the MIT license. ###-->
+    <div id="signature-pad" class="signature-pad">
+        <div class="signature-pad--body">
+            <canvas></canvas>
+        </div>
+        <div class="signature-pad--footer">
+            <div class="description">Please Sign Above</div>
+
+            <div class="signature-pad--actions">
+                <div>
+                    <button type="button" class="clear btn btn-success btn-lg" data-action="clear">Retry</button>
+                </div>
+                <div>
+                    <button type="button" class="save btn btn-success btn-lg" data-action="save-png">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="signature_pad-master/signature_pad-master/example/js/signature_pad-modified.js"></script>
+    <script src="signature_pad-master/signature_pad-master/example/js/app-modified.js"></script>
+    <!-- ### End of MIT Licensed content ### -->
+    
     <div class="container" id="container">
         <div id="checkbox-container">
             <a href="#" class="badge badge-pill badge-success" id="round-checkbox"><i class="fa fa-check" aria-hidden="true"></i></a>
         </div>
     </div><!-- /.container -->  
     
-    <!-- Link to signature_pad utility by szimek. See signature_pad-MIT-License file in signature_pad-master dir for more information -->
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script> <!-- probably can replace this with a link to the signature_pad-master\signature_pad-master\src\signature_pad.js file -->
     <!-- Our custom JavaScript -->
     <script src="custom-js-scripts.js"></script>
     

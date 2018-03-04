@@ -48,6 +48,9 @@ function download(dataURL, filename) {
   document.body.appendChild(a);
   a.click();
 
+  // We need to send the blob and associated data to the database
+  var thing = getDataObject(blob);
+
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
   window.location.assign("file:///C:/Users/Isaac/Documents/GitHub/stmartins-guest-attendance/Sign%20In.html");
@@ -81,3 +84,24 @@ savePNGButton.addEventListener("click", function (event) {
     download(dataURL, "signature.png");
   }
 });
+
+// The functions after this line are not part of the code by Szymon Nowak
+function getDataObject(Blob) {
+    // Avoiding "magic numbers"
+    var lunch_cutoff = 12; // We are assuming that Lunch begins at 12:00 Noon
+    var breakfast = "Breakfast";
+    var lunch = "Lunch";
+
+    var timestamp = new Date();
+    var current_date = (timestamp.getMonth()+1).toString() + "/" + timestamp.getDate().toString()
+          + "/" + timestamp.getFullYear().toString(); // Get the date
+    var current_time = timestamp.getHours().toString() + ":" + timestamp.getMinutes().toString(); // Get the time
+    if (timestamp.getHours() < lunch_cutoff) { // Get the meal: lunch or breakfast?
+        var meal = breakfast;
+    }
+    else {
+        var meal = lunch;
+    }
+    var signature_object = {date: current_date, time: current_time, meal: meal, image: Blob};
+    return signature_object;
+}

@@ -48,6 +48,7 @@ function download(dataURL, filename) {
   a.click();
 
   window.URL.revokeObjectURL(url);
+  signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
 }
 
 // One could simply use Canvas#toBlob method instead, but it's just to show
@@ -63,7 +64,6 @@ function dataURLToBlob(dataURL) {
   for (var i = 0; i < rawLength; ++i) {
     uInt8Array[i] = raw.charCodeAt(i);
   }
-
   return new Blob([uInt8Array], { type: contentType });
 }
 

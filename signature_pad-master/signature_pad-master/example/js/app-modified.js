@@ -1,3 +1,4 @@
+/// This code, with the exception of a few functions, is modified from code released under the MIT-license by Szymon Nowak
 var wrapper = document.getElementById("signature-pad");
 var clearButton = wrapper.querySelector("[data-action=clear]");
 var savePNGButton = wrapper.querySelector("[data-action=save-png]");

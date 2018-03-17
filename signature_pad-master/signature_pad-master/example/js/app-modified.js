@@ -50,7 +50,7 @@ function download(dataURL, filename) {
 
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
-  window.location.assign("file:///C:/Users/Isaac/Documents/GitHub/stmartins-guest-attendance/Sign%20In.html");
+  window.location.assign("Sign%20In.html");
 }
 
 // One could simply use Canvas#toBlob method instead, but it's just to show

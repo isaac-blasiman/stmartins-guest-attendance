@@ -49,7 +49,7 @@ function download(dataURL, filename) {
   a.click();
 
   // We need to send the blob and associated data to the database
-  var thing = getDataObject(blob);
+  var signature_entry = getDataObject(blob);
 
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
@@ -86,8 +86,26 @@ savePNGButton.addEventListener("click", function (event) {
 });
 
 // The functions after this line are not part of the code by Szymon Nowak
+
+// RETURNS: The type of signature, "adult" or "child", based on the URL of the page that getSignatureType() is being called from.
+//                  Or, returns an error message if the URL has neither "Adult" or "Child" in it.
+function getSignatureType() {
+    siteURL = window.location.href;
+    if (siteURL.indexOf("Adult") >=0) {            // The URL has "Adult" in it, so we are at the "Adult" status signature page.
+      signature_type = "adult"
+    } else if (siteURL.indexOf("Child") >= 0) { // The URL has "Child" in it, so we are at the "Child" status signature page.
+      signature_type = "child"
+    } else {                                                  // The URL does not have "Adult" or "Child" in it, so we are at the wrong URL.
+      error_msg = "ERROR: The signature does not have an 'adult' or 'child' status associated with it!";
+      signature_type = error_msg;
+      alert (error_msg);
+    }
+    return signature_type;
+}
+
 function getDataObject(Blob) {
+    signature_type = getSignatureType();
     var current_time = new Date(); // Gets the current time stamp
-    var signature_object = {timestamp: current_time.toString(), image: Blob};
+    var signature_object = {timestamp: current_time.toString(), status: signature_type, image: Blob};
     return signature_object;
 }

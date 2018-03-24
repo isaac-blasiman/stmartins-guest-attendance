@@ -2,16 +2,23 @@
     color: slategray;
 }
 
-#checkbox-container {
+#active-signature-box {
+    border-color: #cccccc;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.button-container {
     font-size: 100px;
     position: relative;
-    left: 89%;
+    height: 117px;
 }
 
 #round-checkbox {
     padding-right: 0.3em;
     padding-left: 0.3em;
     color: #ffffff;
+    float: right;
 }
 
 .custom-tile-button {
@@ -78,6 +85,13 @@
 .fa-3x{
 	font-size: 9vw;
 }
+
+#eraser-button { /* If this is not here, the eraser button is below where it should be, as if it has a top-margin (but it doesn't) */
+    display: inherit;
+}
+
+.signature-pad--footer {
+    line-height: 1;
 
 .starter-template ul{
     list-style-type: none;

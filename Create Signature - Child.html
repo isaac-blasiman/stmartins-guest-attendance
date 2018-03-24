@@ -21,6 +21,14 @@
     <!-- Our own custom CSS styles -->
     <link href="our-custom-styles.css" rel="stylesheet">
     
+    <!-- ### This content within this block is modified from code copyrighted 2018 by Szimon Novak under the MIT License, -->
+    <!-- and is therefore itself under the MIT license. ###-->
+
+    <!-- Link to a modified version of the signature_pad code -->
+    <link rel="stylesheet" href="signature_pad-master/signature_pad-master/example/css/signature-pad-modified.css">
+    
+    <!-- ### End of MIT Licensed content ### -->
+    
   </head>
 
   <body>
@@ -39,9 +47,30 @@
       </div>
     </nav>
 
-    <div class="container"> 
-        <p>The signature box will be here.</p>
-        <div id="checkbox-container">
-            <a href="#" class="badge badge-pill badge-success" id="round-checkbox"><i class="fa fa-check" aria-hidden="true"></i></a>
+    <!-- ### This content within this block is modified from code copyrighted 2018 by Szimon Novak under the MIT License, -->
+    <!-- and is therefore itself under the MIT license. ###-->
+    <div id="signature-pad" class="signature-pad">
+        <div class="signature-pad--body">
+            <canvas></canvas>
         </div>
-    </div><!-- /.container -->
+        <div class="signature-pad--footer">
+            <div class="signature-pad--actions">
+                <div class="button-container" id="eraser-button">
+                    <button type="button" class="clear badge badge-pill badge-success" data-action="clear"><i class="fa fa-eraser" aria-hidden="true"></i></button>
+                </div>
+                <div class="description">Please Sign Above / Por Favor Ingrese Arriba</div>
+                <div class="button-container">
+                    <button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png"><i class="fa fa-check" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="signature_pad-master/signature_pad-master/example/js/signature_pad.js"></script>
+    <script src="signature_pad-master/signature_pad-master/example/js/app-modified.js"></script>
+    <!-- ### End of MIT Licensed content ### -->
+    
+    <!-- Our custom JavaScript -->
+    <script src="custom-js-scripts.js"></script>
+    
+</body>

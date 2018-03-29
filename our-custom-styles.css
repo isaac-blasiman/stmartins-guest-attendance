@@ -26,6 +26,11 @@
 	height: 35vw;
 }
 
+.custom-horizontal-button {
+    height: 5vw;
+    width: 20vw;
+}
+
 #adult-status-button-content{
     position: relative;
 	top: 6vw
@@ -46,9 +51,23 @@
 	top: 6vw
 }
 
+#main-menu-button-content {
+    position: relative;
+    top: 0.5vw
+}
+
+#main-menu-button-content p{
+    position: relative;
+	top: 0vw
+}
+
 #responsive-spacing{
     display: inline-block;
     width: 10%;
+}
+
+.ul-centered {
+    margin-left: auto;
 }
 
 .fa-male, .fa-child{
@@ -73,4 +92,13 @@
 
 .signature-pad--footer {
     line-height: 1;
+}
+
+.starter-template ul{
+    list-style-type: none;
+    padding-left: 0vw;
+}
+
+.starter-template li{
+    margin-bottom: 10px;
 }

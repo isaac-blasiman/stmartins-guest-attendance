@@ -87,10 +87,11 @@ savePNGButton.addEventListener("click", function (event) {
 
 // The functions after this line are not part of the code by Szymon Nowak
 
-// RETURNS: The type of signature, "adult" or "child", based on the URL of the page that getSignatureType() is being called from.
-//                  Or, returns an error message if the URL has neither "Adult" or "Child" in it.
-function getSignatureType() {
-    siteURL = window.location.href;
+// PARAMETER(S): siteURL - a http:\\ or https:\\ url.
+// RETURNS:          The type of signature, "adult" or "child", based on the URL of the page that
+//                           getSignatureType() is being called from.
+//                           Or, returns an error message if the URL has neither "Adult" or "Child" in it.
+function getSignatureType(siteURL) {
     if (siteURL.indexOf("Adult") >=0) {            // The URL has "Adult" in it, so we are at the "Adult" status signature page.
       signature_type = "adult"
     } else if (siteURL.indexOf("Child") >= 0) { // The URL has "Child" in it, so we are at the "Child" status signature page.
@@ -104,7 +105,9 @@ function getSignatureType() {
 }
 
 function getDataObject(Blob) {
-    signature_type = getSignatureType();
+    siteURL = window.location.href;
+    signature_type = getSignatureType(siteURL);
+
     var current_time = new Date(); // Gets the current time stamp
     var signature_object = {timestamp: current_time.toString(), status: signature_type, image: Blob};
     return signature_object;

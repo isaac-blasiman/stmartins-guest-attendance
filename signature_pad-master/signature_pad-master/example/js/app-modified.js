@@ -78,7 +78,6 @@ clearButton.addEventListener("click", function (event) {
 
 savePNGButton.addEventListener("click", function (event) {
   if (signaturePad.isEmpty()) {
-    alert("Please provide a signature first.");
   } else {
     var dataURL = signaturePad.toDataURL();
     download(dataURL, "signature.png");

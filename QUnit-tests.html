@@ -1,0 +1,26 @@
+<!-- Code modified from http://qunitjs.com/intro/ -->
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Testing in QUnit</title>
+    
+    <!-- The QUnit scripts -->
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.5.1.css">
+    <script src="https://code.jquery.com/qunit/qunit-2.5.1.js"></script>
+    
+    <!-- The JavaScript script we want to test -->
+    <script src="signature_pad-master/signature_pad-master/example/js/app-modified.js"></script>
+
+    <script>
+    QUnit.test("Check that calling getSignatureType() gives something", function( assert ) {
+        assert.notEqual(getSignatureType(), null);
+    });
+    </script>
+</head>
+<body>
+
+<div id="qunit"></div>
+
+</body>
+</html>

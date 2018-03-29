@@ -49,7 +49,7 @@ function download(dataURL, filename) {
   a.click();
 
   // We need to send the blob and associated data to the database
-  var signature_entry = getDataObject(blob);
+  var signature_entry = createDataObject(blob);
 
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
@@ -78,6 +78,7 @@ clearButton.addEventListener("click", function (event) {
 
 savePNGButton.addEventListener("click", function (event) {
   if (signaturePad.isEmpty()) {
+    alert("Please provide a signature first.");
   } else {
     var dataURL = signaturePad.toDataURL();
     download(dataURL, "signature.png");

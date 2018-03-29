@@ -16,12 +16,13 @@ function getSignatureType(siteURL) {
     } else {                                                  // The URL does not have "Adult" or "Child" in it, so we are at the wrong URL.
       error_msg = "ERROR: The signature does not have an 'adult' or 'child' status associated with it!";
       signature_type = error_msg;
-      alert (error_msg);
     }
     return signature_type;
 }
 
-function getDataObject(Blob) {
+// PARAMETER(S): Blob - An image encoded as a blob data set
+// RETURNS:          Given a blob, creates a custom signature_object data type of the form {timestamp: <timestamp>, status: <string>, image: <blob>};
+function createDataObject(Blob) {
     siteURL = window.location.href;
     console.log(typeof(siteURL));
     signature_type = getSignatureType(siteURL);

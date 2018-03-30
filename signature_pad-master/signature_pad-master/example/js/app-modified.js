@@ -49,6 +49,7 @@ function download(dataURL, filename) {
   a.click();
 
   // We need to send the blob and associated data to the database
+  var siteURL = window.location.href;
   var signature_status = getSignatureStatus(siteURL); // Determines whether the signature is for an adult or for a child
   var signature_entry = createDataObject(signature_status, blob);
 
@@ -85,6 +86,3 @@ savePNGButton.addEventListener("click", function (event) {
     download(dataURL, "signature.png");
   }
 });
-
-// The functions after this line are not part of the code by Szymon Nowak
-

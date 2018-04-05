@@ -13,6 +13,7 @@
     <script src="signature_pad-master/signature_pad-master/example/js/create-signature-object.js"></script>
 
     <script>
+    <!-- Tests of getSignatureStatus -->
     QUnit.test("Check that getSignatureStatus gives 'adult' status when given an href string that contains the word 'adult.'", function( assert ) {
         assert.equal(getSignatureStatus("file:///C:/Users/Isaac/Documents/GitHub/stmartins-guest-attendance/Create%20Signature%20-%20Adult.html"), 'adult');
     });
@@ -21,6 +22,12 @@
     });
     QUnit.test("Check that getSignatureStatus returns an error string when given an href string that does not contain the word 'child' or the word 'adult'", function( assert ) {
         assert.equal(getSignatureStatus("file:///C:/Users/Isaac/Documents/GitHub/stmartins-guest-attendance/Sign%20In.html"), "ERROR: The signature does not have an 'adult' or 'child' status associated with it!");
+    });
+    
+    <!-- Tests of createDataObject -->
+    var variable = {image: blob, status:"adult", timestamp:"Thu Mar 29 2018 20:37:31 GMT-0400 (Eastern Daylight Time)"};
+    QUnit.test("Check that createDataObject returns a properly formatted signature_entry object when given status 'adult' and a properly formatted blob", function( assert ) {
+        assert.equal(createDataObject('adult', 'Blob(11630) {size: 11630, type: "image/png"}'), variable);
     });
     </script>
 </head>

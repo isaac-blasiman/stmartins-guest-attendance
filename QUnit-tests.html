@@ -14,20 +14,38 @@
 
     <script>
     <!-- Tests of getSignatureStatus -->
-    QUnit.test("Check that getSignatureStatus gives 'adult' status when given an href string that contains the word 'adult.'", function( assert ) {
+    QUnit.test("getSignatureStatus() -- Check that getSignatureStatus gives 'adult' status when given an href string that contains the word 'adult.'", function( assert ) {
         assert.equal(getSignatureStatus("file:///C:/Users/Isaac/Documents/GitHub/stmartins-guest-attendance/Create%20Signature%20-%20Adult.html"), 'adult');
     });
-    QUnit.test("Check that getSignatureStatus gives 'child' status when given an href string that contains the word 'child.'", function( assert ) {
+    QUnit.test("getSignatureStatus() -- Check that getSignatureStatus gives 'child' status when given an href string that contains the word 'child.'", function( assert ) {
         assert.equal(getSignatureStatus("file:///C:/Users/Isaac/Documents/GitHub/stmartins-guest-attendance/Create%20Signature%20-%20Child.html"), 'child');
     });
-    QUnit.test("Check that getSignatureStatus returns an error string when given an href string that does not contain the word 'child' or the word 'adult'", function( assert ) {
+    QUnit.test("getSignatureStatus() -- Check that getSignatureStatus returns an error string when given an href string that does not contain the word 'child' or the word 'adult'", function( assert ) {
         assert.equal(getSignatureStatus("file:///C:/Users/Isaac/Documents/GitHub/stmartins-guest-attendance/Sign%20In.html"), "ERROR: The signature does not have an 'adult' or 'child' status associated with it!");
     });
     
     <!-- Tests of createDataObject -->
-    var variable = {image: blob, status:"adult", timestamp:"Thu Mar 29 2018 20:37:31 GMT-0400 (Eastern Daylight Time)"};
-    QUnit.test("Check that createDataObject returns a properly formatted signature_entry object when given status 'adult' and a properly formatted blob", function( assert ) {
-        assert.equal(createDataObject('adult', 'Blob(11630) {size: 11630, type: "image/png"}'), variable);
+    QUnit.test("createDataObject() -- Check that when createDataObject is passed signature_status 'adult', createDataObject returns a signature_entry object with status 'adult'", function( assert ) {
+        newDataObject = createDataObject('adult', new Blob());
+        assert.equal(newDataObject.status, 'adult');
+    });
+    QUnit.test("createDataObject() -- Check that when createDataObject is passed signature_status 'child', createDataObject returns a signature_entry object with status 'child'", function( assert ) {
+            newDataObject = createDataObject('child', new Blob());
+            assert.equal(newDataObject.status, 'child');
+    });
+    QUnit.test("createDataObject() -- Check that when createDataObject is called, the returned signature_entry object's timestamp attribute is a string object", function( assert ) {
+            // Later, we may want to test that the timestamp has the CORRECT time, not just A time. This would be difficult given that we would need to automatically set the device
+            // time from JavaScript.
+            newString = "string"; // String object created for testing
+            newDataObject = createDataObject('adult', new Blob());
+            assert.equal(typeof newDataObject.timestamp, typeof newString); // Note that 'typeof' applied to a timestamp returns a string, not a timestamp object.
+    });
+    QUnit.test("createDataObject() -- Check that when createDataObject is called, the returned signature_entry object's blob attribute is a blob object", function( assert ) {
+            // Later, we may want to test that the timestamp has the CORRECT blob, not just A blob. This could be difficult given that working with blob objects and creating
+            // new blob objects has proved moderately challenging.
+            newBlob = new Blob(); // Blob object  created for testing
+            newDataObject = createDataObject('adult', newBlob);
+            assert.equal(typeof newDataObject.image, typeof newBlob);
     });
     </script>
 </head>

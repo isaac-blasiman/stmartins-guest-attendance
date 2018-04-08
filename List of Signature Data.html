@@ -21,28 +21,19 @@
     <!-- Our own custom CSS styles -->
     <link href="our-custom-styles.css" rel="stylesheet">
     
+    <!-- Our custom Javascript Scripts -->
+    <script src="custom-js-scripts.js"></script>
+    
   </head>
 
   <body>
 
-      <div class="starter-template">
-        <h3>List of Signature Data</h3>
-        <ul>
-            <li>
-                <a class="btn btn-secondary btn-lg custom-horizontal-button" href="Sign In.html">
-                    <div id="main-menu-button-content">
-                        <p>Button</p>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="btn btn-secondary btn-lg custom-horizontal-button" id="child-status-icon" href="List of Signatures.html">
-                    <div id="main-menu-button-content">
-                        <p>Button 2</p>
-                    </div>
-                </a>
-            </li>
-        </ul>
+       <div class="starter-template">
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-success btn-lg vertical-button" onclick=setActive($this)>Day</button>
+            <button type="button" class="btn btn-success btn-lg vertical-button" onclick=setActive($this)>Week</button>
+            <button type="button" class="btn btn-success btn-lg vertical-button" onclick=setActive($this)>Month</button>
+        </div>
       </div><!-- /starter-template-->
     
     <!-- Bootstrap core JavaScript

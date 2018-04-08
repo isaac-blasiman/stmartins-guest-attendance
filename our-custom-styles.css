@@ -70,6 +70,10 @@
     margin-left: auto;
 }
 
+.vertical-button:active {
+    background-color: #00FFFF;
+}
+
 .fa-male, .fa-child{
 	color: #00a9ff;
 }

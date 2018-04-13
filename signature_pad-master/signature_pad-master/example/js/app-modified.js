@@ -1,4 +1,4 @@
-/// This code, with the exception of a few functions, is modified from code released under the MIT-license by Szymon Nowak
+/// This code, with the exception of a few functions and lines of code, is modified from code released under the MIT-license by Szymon Nowak
 var wrapper = document.getElementById("signature-pad");
 var clearButton = wrapper.querySelector("[data-action=clear]");
 var savePNGButton = wrapper.querySelector("[data-action=save-png]");
@@ -47,6 +47,11 @@ function download(dataURL, filename) {
 
   document.body.appendChild(a);
   a.click();
+
+  // We need to send the blob and associated data to the database
+  var siteURL = window.location.href;
+  var signature_status = getSignatureStatus(siteURL); // Determines whether the signature is for an adult or for a child
+  var signature_entry = createDataObject(signature_status, blob);
 
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.

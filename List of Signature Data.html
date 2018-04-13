@@ -24,18 +24,42 @@
     <!-- Our custom Javascript Scripts -->
     <script src="custom-js-scripts.js"></script>
     
-  </head>
+</head>
+<body>
 
-  <body>
-
-       <div class="starter-template">
-        <div class="btn-group-vertical">
-            <button type="button" class="btn btn-success btn-lg vertical-button" onclick=setActive($this)>Day</button>
-            <button type="button" class="btn btn-success btn-lg vertical-button" onclick=setActive($this)>Week</button>
-            <button type="button" class="btn btn-success btn-lg vertical-button" onclick=setActive($this)>Month</button>
+    <div id="wrapper">
+        <div id="radio">
+            <form>
+                <input type="radio" name="dateType" value="day"> Day<br>
+                <input type="radio" name="dateType" value="week"> Week<br>
+                <input type="radio" name="dateType" value="month"> Month
+            </form>
         </div>
-      </div><!-- /starter-template-->
-    
+        <div class="dateSelect day">
+            <form>
+                Enter a date:
+                <input type="date" name="date"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="dateSelect week">
+            <form>
+                Enter a start date:
+                <input type="date" name="dateStart"><br>
+                Enter an end date:
+                <input type="date" name="dateEnd"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="dateSelect month">
+            <form>
+                Enter a month:
+                <input type="month" name="month"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -45,6 +69,19 @@
     <script src="Sign%20In_files/bootstrap.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="Sign%20In_files/ie10-viewport-bug-workaround.js"></script>
-  
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".dateSelect").hide();
+            $('input[type="radio"]').click(function() {
+                var inputValue = $(this).attr("value");
+                var targetBox = $("." + inputValue);
+                $(".dateSelect").not(targetBox).hide();
+                $(targetBox).show();
+            });
+        });
+    </script>
 
 </body></html>

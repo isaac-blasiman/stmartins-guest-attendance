@@ -106,3 +106,7 @@
 .starter-template li{
     margin-bottom: 10px;
 }
+
+#wrapper{
+    margin: 0 50px;
+}

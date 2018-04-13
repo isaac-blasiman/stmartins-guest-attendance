@@ -26,42 +26,45 @@
     
 </head>
 <body>
-
-    <div id="wrapper" class="col-sm-4">
-        <div id="radio">
-            <form>
-                <input type="radio" name="dateType" value="day"> Day<br>
-                <input type="radio" name="dateType" value="week"> Week<br>
-                <input type="radio" name="dateType" value="month"> Month
-            </form>
-        </div>
-        <div class="dateSelect day">
-            <form>
-                Enter a date:
-                <input type="date" name="date"><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <div class="dateSelect week">
-            <form>
-                Enter a start date:
-                <input type="date" name="dateStart"><br>
-                Enter an end date:
-                <input type="date" name="dateEnd"><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <div class="dateSelect month">
-            <form>
-                Enter a month:
-                <input type="month" name="month" value="2018-01"><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
-    <div id="dataDisplay" background-color: "green" class="col-sm-8">
-        <p>Content</p>
-    </div>
+    <div class="container">
+        <div class="row"> <!-- The "row" displaying the date range select on the left and the display of data from the database to the right -->
+            <div id="wrapper" class="col-sm-4"> 
+                <div id="radio">
+                    <form>
+                        <input type="radio" name="dateType" value="day"> Day<br>
+                        <input type="radio" name="dateType" value="week"> Week<br>
+                        <input type="radio" name="dateType" value="month"> Month
+                    </form>
+                </div>
+                <div class="dateSelect day">
+                    <form>
+                        Enter a date:
+                        <input type="date" name="date"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="dateSelect week">
+                    <form>
+                        Enter a start date:
+                        <input type="date" name="dateStart"><br>
+                        Enter an end date:
+                        <input type="date" name="dateEnd"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="dateSelect month">
+                    <form>
+                        Enter a month:
+                        <input type="month" name="month" value="2018-01"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div> <!-- End of dateRangeSelect -->
+            <div id="dataDisplay" background-color: "green" class="col-sm-8">
+                <p>Content</p>
+            </div>
+        </div> <!-- End of row -->
+    </div> <!-- End of container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

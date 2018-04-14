@@ -29,6 +29,11 @@ function getSignatureStatus(siteURL) {
 // Given a blob, creates a custom signature_object data type of the form {timestamp: <timestamp>, status: <string>, image: <blob>};
 function createDataObject(signature_status, Blob) {
     var current_time = new Date(); // Gets the current time stamp
+    current_time = current_time.toISOString().slice(0, 19).replace('T', ' '); // Converts the timestamp to a SQL-readable format. From Stack Overflow, see Attribution 1 at bottom of file.
     var signature_object = {timestamp: current_time.toString(), status: signature_status, image: Blob};
     return signature_object;
 }
+
+// ATTRIBUTIONS
+// 1.  URL: https://stackoverflow.com/questions/5129624/convert-js-date-time-to-mysql-datetime
+//      POSTED BY: https://stackoverflow.com/users/4354249/farside

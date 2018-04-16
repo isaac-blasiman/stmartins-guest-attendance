@@ -39,14 +39,16 @@ function createDataObject(signature_status, Blob) {
 // RETURNS: Nothing
 // WHAT IT DOES: Runs the MySqlJS service to access the database.
 function executeMySqlJS() {
+    console.log("started");
     MySql.Execute( // From the examples at http://www.mysqljs.com/
-        "sql8.freemysqlhosting.net",
-        "sql8173720",
-        "S4EsfUDHt7",
-        "sql8173720",
-        "select * from Users",
+        "127.0.0.1:3306",
+        "root",
+        "P4ssw0rd",
+        "meal_attendance",
+        "select * from signature_entry",
         function (data) {
             console.log(JSON.stringify(data,null,2));
+         console.log("finished");
     }); // End of code from http://www.mysqljs.com/
 }
 

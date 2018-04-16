@@ -87,7 +87,7 @@ savePNGButton.addEventListener("click", function (event) {
     download(dataURL, "signature.png");
   }
 
-  setTimeout('window.location.assign("Sign%20In.html")', 1000); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018. See attribution 1 at bottom of file.
+  // setTimeout('window.location.assign("Sign%20In.html")', 10000); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018. See attribution 1 at bottom of file.
 });
 
 // ATTRIBUTIONS (Added by Isaac Blasiman 2018)

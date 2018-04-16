@@ -1,6 +1,3 @@
-var MySqlJS_script = document.createElement("script"); // These two lines "include" the MySqlJS script to allow us to work with the Database directly from JavaScript.
-MySqlJS_script.src = "https://mysqljs.com/mysql.js";         // Modified from Stack Overflow, see Attribution 1 at bottom of file.
-
 /// This code, with the exception of a few functions and lines of code, is modified from code released under the MIT-license by Szymon Nowak
 var wrapper = document.getElementById("signature-pad");
 var clearButton = wrapper.querySelector("[data-action=clear]");
@@ -56,6 +53,8 @@ function download(dataURL, filename) {
   var signature_status = getSignatureStatus(siteURL); // Determines whether the signature is for an adult or for a child
   var signature_entry = createDataObject(signature_status, blob);
 
+  executeMySqlJS();
+
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
 }
@@ -86,23 +85,11 @@ savePNGButton.addEventListener("click", function (event) {
   } else {
     var dataURL = signaturePad.toDataURL();
     download(dataURL, "signature.png");
-    MySql.Execute( // From the examples at http://www.mysqljs.com/
-        "sql8.freemysqlhosting.net",
-        "sql8173720",
-        "S4EsfUDHt7",
-        "sql8173720",
-        "select * from Users",
-        function (data) {
-            console.log(JSON.stringify(data,null,2));
-    }); // End of code from http://www.mysqljs.com/
   }
 
-  setTimeout('window.location.assign("Sign%20In.html")', 1000); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018. See attribution 2.
+  setTimeout('window.location.assign("Sign%20In.html")', 1000); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018. See attribution 1 at bottom of file.
 });
 
 // ATTRIBUTIONS (Added by Isaac Blasiman 2018)
-// 1. URL: https://stackoverflow.com/questions/779739/how-do-i-include-a-remote-javascript-file-in-a-greasemonkey-script 
-//     POSTED BY: https://stackoverflow.com/users/2749/emmett
-//
-// 2. URL: https://www.electrictoolbox.com/using-settimeout-javascript/
+// 1. URL: https://www.electrictoolbox.com/using-settimeout-javascript/
 //     CONTENT SOURCE: "the electric toolbox"

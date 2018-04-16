@@ -1,3 +1,6 @@
+var MySqlJS_script = document.createElement("script"); // https://stackoverflow.com/questions/779739/how-do-i-include-a-remote-javascript-file-in-a-greasemonkey-script and https://stackoverflow.com/users/2749/emmett
+MySqlJS_script.src = "https://mysqljs.com/mysql.js";
+
 /// This code, with the exception of a few functions and lines of code, is modified from code released under the MIT-license by Szymon Nowak
 var wrapper = document.getElementById("signature-pad");
 var clearButton = wrapper.querySelector("[data-action=clear]");
@@ -55,7 +58,6 @@ function download(dataURL, filename) {
 
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
-  window.location.assign("Sign%20In.html"); // Untested, but works when you do it manually
 }
 
 // One could simply use Canvas#toBlob method instead, but it's just to show
@@ -84,5 +86,17 @@ savePNGButton.addEventListener("click", function (event) {
   } else {
     var dataURL = signaturePad.toDataURL();
     download(dataURL, "signature.png");
+    console.log("I'm here!");
+    // MySqlJS_script.MySql.Execute( // http://www.mysqljs.com/
+        // "sql8.freemysqlhosting.net",
+        // "sql8173720",
+        // "S4EsfUDHt7",
+        // "sql8173720",
+        // "select * from Users",
+        // function (data) {
+            // console.log(JSON.stringify(data,null,2));
+    // });
+    console.log("I'm done!");
   }
+  // window.location.assign("Sign%20In.html"); // Untested, but works when you do it manually
 });

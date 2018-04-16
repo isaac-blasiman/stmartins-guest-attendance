@@ -59,12 +59,18 @@
                 </div>
                 <div class="description">Please Sign Above / Por Favor Ingrese Arriba</div>
                 <div class="button-container">
-                    <button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png" onclick=sendToDB()><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- ### End of MIT Licensed content ### -->
+    
+    <!-- Link to MySqlJS functionality, allows us to push and pull from the MySQL DB using JavaScript -->
+    <script src="https://mysqljs.com/mysql.js"></script>
 
+    <!-- ### This content within this block is modified from code copyrighted 2018 by Szimon Novak under the MIT License, -->
+    <!-- and is therefore itself under the MIT license. ###-->
     <script src="signature_pad-master/signature_pad-master/example/js/signature_pad.js"></script>
     <script src="signature_pad-master/signature_pad-master/example/js/create-signature-object.js"></script> <!-- Added by Isaac Blasiman. -->
     <script src="signature_pad-master/signature_pad-master/example/js/app-modified.js"></script> <!-- This needs to be after the 'create-signature-object.js script, since it uses that script's functions' -->
@@ -72,5 +78,31 @@
     
     <!-- Our custom JavaScript -->
     <script src="custom-js-scripts.js"></script>
+    
+    <script>
+        function sendToDB() {
+            console.log("WORKING");
+            MySql.Execute( // http://www.mysqljs.com/
+                "sql8.freemysqlhosting.net",
+                "sql8173720",
+                "S4EsfUDHt7",
+                "sql8173720",
+                "select * from Users",
+                function (data) {
+                    console.log(JSON.stringify(data,null,2));
+            });
+        }
+    </script>
+    <!-- <script> -->
+        <!-- MySql.Execute( // http://www.mysqljs.com/ -->
+            <!-- "sql8.freemysqlhosting.net", -->
+            <!-- "sql8173720", -->
+            <!-- "S4EsfUDHt7", -->
+            <!-- "sql8173720", -->
+            <!-- "select * from Users", -->
+            <!-- function (data) { -->
+                <!-- console.log(JSON.stringify(data,null,2)); -->
+        <!-- }); -->
+    <!-- </script> -->
     
 </body>

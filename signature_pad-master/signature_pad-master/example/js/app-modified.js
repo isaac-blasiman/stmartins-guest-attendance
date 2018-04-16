@@ -96,10 +96,13 @@ savePNGButton.addEventListener("click", function (event) {
             console.log(JSON.stringify(data,null,2));
     }); // End of code from http://www.mysqljs.com/
   }
-  // The Execute statement doesn't work unless this is put on a timer.
-  window.location.assign("Sign%20In.html"); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018
+
+  setTimeout('window.location.assign("Sign%20In.html")', 1000); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018. See attribution 2.
 });
 
 // ATTRIBUTIONS (Added by Isaac Blasiman 2018)
-// 1.  URL: https://stackoverflow.com/questions/779739/how-do-i-include-a-remote-javascript-file-in-a-greasemonkey-script 
-//      POSTED BY: https://stackoverflow.com/users/2749/emmett
+// 1. URL: https://stackoverflow.com/questions/779739/how-do-i-include-a-remote-javascript-file-in-a-greasemonkey-script 
+//     POSTED BY: https://stackoverflow.com/users/2749/emmett
+//
+// 2. URL: https://www.electrictoolbox.com/using-settimeout-javascript/
+//     CONTENT SOURCE: "the electric toolbox"

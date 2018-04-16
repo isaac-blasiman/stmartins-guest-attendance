@@ -1,5 +1,5 @@
-var MySqlJS_script = document.createElement("script"); // https://stackoverflow.com/questions/779739/how-do-i-include-a-remote-javascript-file-in-a-greasemonkey-script and https://stackoverflow.com/users/2749/emmett
-MySqlJS_script.src = "https://mysqljs.com/mysql.js";
+var MySqlJS_script = document.createElement("script"); // These two lines "include" the MySqlJS script to allow us to work with the Database directly from JavaScript.
+MySqlJS_script.src = "https://mysqljs.com/mysql.js";         // Modified from Stack Overflow, see Attribution 1 at bottom of file.
 
 /// This code, with the exception of a few functions and lines of code, is modified from code released under the MIT-license by Szymon Nowak
 var wrapper = document.getElementById("signature-pad");
@@ -86,17 +86,20 @@ savePNGButton.addEventListener("click", function (event) {
   } else {
     var dataURL = signaturePad.toDataURL();
     download(dataURL, "signature.png");
-    console.log("I'm here!");
-    // MySqlJS_script.MySql.Execute( // http://www.mysqljs.com/
-        // "sql8.freemysqlhosting.net",
-        // "sql8173720",
-        // "S4EsfUDHt7",
-        // "sql8173720",
-        // "select * from Users",
-        // function (data) {
-            // console.log(JSON.stringify(data,null,2));
-    // });
-    console.log("I'm done!");
+    MySql.Execute( // From the examples at http://www.mysqljs.com/
+        "sql8.freemysqlhosting.net",
+        "sql8173720",
+        "S4EsfUDHt7",
+        "sql8173720",
+        "select * from Users",
+        function (data) {
+            console.log(JSON.stringify(data,null,2));
+    }); // End of code from http://www.mysqljs.com/
   }
-  // window.location.assign("Sign%20In.html"); // Untested, but works when you do it manually
+  // The Execute statement doesn't work unless this is put on a timer.
+  window.location.assign("Sign%20In.html"); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018
 });
+
+// ATTRIBUTIONS (Added by Isaac Blasiman 2018)
+// 1.  URL: https://stackoverflow.com/questions/779739/how-do-i-include-a-remote-javascript-file-in-a-greasemonkey-script 
+//      POSTED BY: https://stackoverflow.com/users/2749/emmett

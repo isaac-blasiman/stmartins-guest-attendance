@@ -59,7 +59,7 @@
                 </div>
                 <div class="description">Please Sign Above / Por Favor Ingrese Arriba</div>
                 <div class="button-container">
-                    <button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png" onclick=sendToDB()><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
@@ -78,31 +78,5 @@
     
     <!-- Our custom JavaScript -->
     <script src="custom-js-scripts.js"></script>
-    
-    <script>
-        function sendToDB() {
-            console.log("WORKING");
-            MySql.Execute( // http://www.mysqljs.com/
-                "sql8.freemysqlhosting.net",
-                "sql8173720",
-                "S4EsfUDHt7",
-                "sql8173720",
-                "select * from Users",
-                function (data) {
-                    console.log(JSON.stringify(data,null,2));
-            });
-        }
-    </script>
-    <!-- <script> -->
-        <!-- MySql.Execute( // http://www.mysqljs.com/ -->
-            <!-- "sql8.freemysqlhosting.net", -->
-            <!-- "sql8173720", -->
-            <!-- "S4EsfUDHt7", -->
-            <!-- "sql8173720", -->
-            <!-- "select * from Users", -->
-            <!-- function (data) { -->
-                <!-- console.log(JSON.stringify(data,null,2)); -->
-        <!-- }); -->
-    <!-- </script> -->
     
 </body>

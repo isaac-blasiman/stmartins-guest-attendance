@@ -1,3 +1,8 @@
+body {
+    background-color: #eeeeee;
+    padding-top: 3rem; /* modified from starter template */
+}
+
 .blue-on-hover:hover {
     color: slategray;
 }
@@ -19,6 +24,12 @@
     padding-left: 0.3em;
     color: #ffffff;
     float: right;
+}
+
+#round-x-button {
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+    color: #ffffff;
 }
 
 .custom-tile-button {
@@ -86,7 +97,7 @@
 	font-size: 9vw;
 }
 
-#eraser-button { /* If this is not here, the eraser button is below where it should be, as if it has a top-margin (but it doesn't) */
+#x-button { /* If this is not here, the eraser button is below where it should be, as if it has a top-margin (but it doesn't) */
     display: inherit;
 }
 

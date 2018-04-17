@@ -81,6 +81,10 @@ body {
     margin-left: auto;
 }
 
+.vertical-button:active {
+    background-color: #00FFFF;
+}
+
 .fa-male, .fa-child{
 	color: #00a9ff;
 }
@@ -112,4 +116,8 @@ body {
 
 .starter-template li{
     margin-bottom: 10px;
+}
+
+#wrapper{
+    margin: 0 50px;
 }

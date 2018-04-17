@@ -6,8 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <link rel="icon" href="<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-    <title>Main Menu</title>
+    <title>Signature Data</title>
     
     <!-- Font Awesome Inclusion  -->
     <link href="font-awesome-4.7.0\css\font-awesome.min.css" rel="stylesheet">
@@ -21,37 +20,39 @@
     <!-- Our own custom CSS styles -->
     <link href="our-custom-styles.css" rel="stylesheet">
     
-  </head>
-
-  <body>
-      <div class="starter-template">
-        <ul>
-            <li>
-                <a class="btn btn-secondary btn-lg custom-horizontal-button" href="Sign In.html">
-                    <div id="main-menu-button-content">
-                        <p>Meal Attendance</p>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="btn btn-secondary btn-lg custom-horizontal-button" id="child-status-icon" href="List of Signature Data.html">
-                    <div id="main-menu-button-content">
-                        <p>View Signatures</p>
-                    </div>
-                </a>
-            </li>
-        </ul>
-      </div><!-- /starter-template-->
+    <!-- Our custom Javascript Scripts -->
+    <script src="custom-js-scripts.js"></script>
     
+</head>
+<body>
+    <div class="container">
+        <div class="row"> <!-- The "row" displaying the date range select on the left and the display of data from the database to the right -->
+            <div id="wrapper" class="col-sm-4">
+                <div class="dateSelect range">
+                    <form action="range.php">
+                        Enter a start date:
+                        <input type="date" name="dateStart"><br>
+                        Enter an end date:
+                        <input type="date" name="dateEnd"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div> <!-- End of dateRangeSelect -->
+            <div id="dataDisplay" class="col">
+                <h3>Totals</h3>
+            </div>
+        </div> <!-- End of row -->
+    </div> <!-- End of container -->
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="Sign%20In_files/jquery-3.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="Sign%20In_files/tether.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="Sign%20In_files/tether.js"></script>
     <script src="Sign%20In_files/bootstrap.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="Sign%20In_files/ie10-viewport-bug-workaround.js"></script>
-  
 
+    <script src="https://mysqljs.com/mysql.js"></script>
 </body></html>

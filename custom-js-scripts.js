@@ -1,4 +1,4 @@
 function setActive(this) {
-    console.log("CALLED")";
+    console.log("CALLED");
     this.active = true;
 }

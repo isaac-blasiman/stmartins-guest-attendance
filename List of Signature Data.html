@@ -6,7 +6,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <link rel="icon" href="<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
     <title>Signature Data</title>
     
     <!-- Font Awesome Inclusion  -->
@@ -32,19 +31,18 @@
                 <div id="radio">
                     <form>
                         <input type="radio" name="dateType" value="day"> Day<br>
-                        <input type="radio" name="dateType" value="week"> Week<br>
-                        <input type="radio" name="dateType" value="month"> Month
+                        <input type="radio" name="dateType" value="week"> Week
                     </form>
                 </div>
                 <div class="dateSelect day">
-                    <form>
+                    <form action="day.php" target="_blank">
                         Enter a date:
                         <input type="date" name="date"><br>
                         <input type="submit" value="Submit">
                     </form>
                 </div>
                 <div class="dateSelect week">
-                    <form>
+                    <form action="week.php" target="_blank">
                         Enter a start date:
                         <input type="date" name="dateStart"><br>
                         Enter an end date:
@@ -52,16 +50,9 @@
                         <input type="submit" value="Submit">
                     </form>
                 </div>
-                <div class="dateSelect month">
-                    <form>
-                        Enter a month:
-                        <input type="month" name="month" value="2018-01"><br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
             </div> <!-- End of dateRangeSelect -->
             <div id="dataDisplay" class="col">
-                <p>Content</p>
+                <p>Totals will display in a new tab</p>
             </div>
         </div> <!-- End of row -->
     </div> <!-- End of container -->
@@ -69,14 +60,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="Sign%20In_files/jquery-3.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="Sign%20In_files/tether.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="Sign%20In_files/tether.js"></script>
     <script src="Sign%20In_files/bootstrap.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="Sign%20In_files/ie10-viewport-bug-workaround.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://mysqljs.com/mysql.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -89,5 +80,4 @@
             });
         });
     </script>
-
 </body></html>

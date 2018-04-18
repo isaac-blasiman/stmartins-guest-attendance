@@ -47,8 +47,12 @@ by meal status (breakfast or lunch) and guest status (adult or child) with total
 and children and for both times.
 
 The "List of Signature Data" page has a form on the left side where the user can enter two dates. Data is collected from the time starting with the
-starting date and ending with the end date. To enter a starting or ending date, click the "mm/dd/yyyy" text in the box you want to change. A calendar
-popup will appear. 
+starting date and ending with the end date.
+
+To enter a starting date, click the "mm/dd/yyyy" text in the box next to "Enter a start date:" . A calendar
+popup will appear. Click the date on which you want the data to start being colected. To change the month, use the small arrows on either side of
+the month name (such as "January"). Or, click the month name (again, such as "January" to open a dialog that will let you change both the month
+and the year. To enter an ending date, do the same with the "mm/dd/yyyy"
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Licensing and Legal

@@ -103,6 +103,10 @@
             die("Connection failed: " . $conn->connect_error);
     }
     
-    $sql = "INSERT INTO signature_entry (
+    $sql = "INSERT INTO signature_entry (id, signature_timestamp, status, image) 
+    VALUES ("signatureObject.id", "signatureObject.timestamp,", "signatureObject.status", "signatureObject.image")";
+    $result = $conn->query($sql);
+    $conn->close();
+    ?>
 
 </body>

@@ -69,7 +69,9 @@
             documentCanvas = document.getElementById("canvas");
             newDataURL = documentCanvas.toDataURL(); // Create a Data URL
             newBlob = dataURLToBlob(newDataURL); // Create a Blob with the Data URL using the function from signature_pad
-            console.log(newBlob);
+            signatureStatus = getSignatureStatus(window.location.href);
+            signatureObject = createDataObject(signatureStatus, newBlob);
+            console.log(signatureObject);
         }
         
         // This function taken from signature_pad-master/signature_pad-master/example/js/app-modified.js,
@@ -88,5 +90,19 @@
             return new Blob([uInt8Array], { type: contentType });
         }
     </script>
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "password";
+    $dbname = "meal_attendance";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $sql = "INSERT INTO signature_entry (
 
 </body>

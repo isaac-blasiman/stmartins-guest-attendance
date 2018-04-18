@@ -53,6 +53,8 @@ function download(dataURL, filename) {
   var signature_status = getSignatureStatus(siteURL); // Determines whether the signature is for an adult or for a child
   var signature_entry = createDataObject(signature_status, blob);
 
+  sendSignatureEntry(signature_entry);
+
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
 }

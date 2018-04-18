@@ -72,6 +72,15 @@
             signatureStatus = getSignatureStatus(window.location.href);
             signatureObject = createDataObject(signatureStatus, newBlob);
             console.log(signatureObject);
+            
+            // https://www.w3schools.com/js/js_ajax_php.asp referenced for this paragraph
+            xmlhttpReq = new XMLHttpRequest(); // https://www.w3schools.com/js/js_ajax_http.asp
+            xmlhttpReq.onreadystatechange = function()  {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log("SUCCESS!");
+                }
+            }
+            xmlhttp.open("POST", "Create Signature - Adult.php?q=" + signatureObject.toString()); // Not sure how to pass the data here.
         }
         
         // This function taken from signature_pad-master/signature_pad-master/example/js/app-modified.js,
@@ -90,7 +99,7 @@
             return new Blob([uInt8Array], { type: contentType });
         }
     </script>
-    <?php
+    <?php // Referencing https://www.w3schools.com/php/php_mysql_update.asp
     $servername = "localhost";
     $username = "root";
     $password = "password";

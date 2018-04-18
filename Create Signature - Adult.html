@@ -35,7 +35,7 @@
     <!-- and is therefore itself under the MIT license. ###-->
     <div id="signature-pad" class="signature-pad">
         <div class="signature-pad--body">
-            <canvas></canvas>
+            <canvas id="canvas"></canvas>
         </div>
         <div class="signature-pad--footer">
             <div class="signature-pad--actions">
@@ -46,7 +46,7 @@
                     <span>Please Sign Here / </span><br><span>Favor de Ingrese Aquí</span>
                 </div>
                 <div class="button-container">
-                    <button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png" onclick = "sendSignature()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
@@ -63,5 +63,30 @@
     <script src="signature_pad-master/signature_pad-master/example/js/send-signature-entry.js"></script> <!-- Added by Isaac Blasiman. -->
     <script src="signature_pad-master/signature_pad-master/example/js/app-modified.js"></script> <!-- This needs to be after the 'create-signature-object' and 'create-signature-entry' scripts, since it uses their functions' -->
     <!-- ### End of MIT Licensed content ### -->
+    
+    <script>
+        function sendSignature() {
+            documentCanvas = document.getElementById("canvas");
+            newDataURL = documentCanvas.toDataURL(); // Create a Data URL
+            newBlob = dataURLToBlob(newDataURL); // Create a Blob with the Data URL using the function from signature_pad
+            console.log(newBlob);
+        }
+        
+        // This function taken from signature_pad-master/signature_pad-master/example/js/app-modified.js,
+        // written by Szimon Novak and modified by Isaac Blasiman
+        function dataURLToBlob(dataURL) {
+            // Code taken from https://github.com/ebidel/filer.js
+            var parts = dataURL.split(';base64,');
+            var contentType = parts[0].split(":")[1];
+            var raw = window.atob(parts[1]);
+            var rawLength = raw.length;
+            var uInt8Array = new Uint8Array(rawLength);
+            
+            for (var i = 0; i < rawLength; ++i) {
+                uInt8Array[i] = raw.charCodeAt(i);
+            }
+            return new Blob([uInt8Array], { type: contentType });
+        }
+    </script>
 
 </body>

@@ -35,23 +35,6 @@ function createDataObject(signature_status, Blob) {
     return signature_object;
 }
 
-// PARAMETER(S): None
-// RETURNS: Nothing
-// WHAT IT DOES: Runs the MySqlJS service to access the database.
-function executeMySqlJS() {
-    console.log("started");
-    MySql.Execute( // From the examples at http://www.mysqljs.com/
-        "127.0.0.1:3306",
-        "root",
-        "P4ssw0rd",
-        "meal_attendance",
-        "select * from signature_entry",
-        function (data) {
-            console.log(JSON.stringify(data,null,2));
-         console.log("finished");
-    }); // End of code from http://www.mysqljs.com/
-}
-
 // ATTRIBUTIONS
 // 1.  URL: https://stackoverflow.com/questions/5129624/convert-js-date-time-to-mysql-datetime
 //      POSTED BY: https://stackoverflow.com/users/4354249/farside

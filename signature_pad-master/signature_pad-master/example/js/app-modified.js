@@ -53,8 +53,6 @@ function download(dataURL, filename) {
   var signature_status = getSignatureStatus(siteURL); // Determines whether the signature is for an adult or for a child
   var signature_entry = createDataObject(signature_status, blob);
 
-  executeMySqlJS();
-
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
 }
@@ -87,7 +85,7 @@ savePNGButton.addEventListener("click", function (event) {
     download(dataURL, "signature.png");
   }
 
-  // setTimeout('window.location.assign("Sign%20In.html")', 10000); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018. See attribution 1 at bottom of file.
+  setTimeout('window.location.assign("Sign%20In.html")', 1000); // Untested, but works when you do it manually. Added by Isaac Blasiman 2018. See attribution 1 at bottom of file.
 });
 
 // ATTRIBUTIONS (Added by Isaac Blasiman 2018)

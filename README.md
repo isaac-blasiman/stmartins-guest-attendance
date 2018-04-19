@@ -63,8 +63,22 @@ in the bottom right, then, is the grand total number of signatures signed during
 
 # Developer Notes
 
+### Sending the Signature
 The branch send-signature-object has not been merged into master. This branch contains unfinished code that was intended to send a signature
 object from the front-end to the MySQL database.
+
+### Setup
+This project is designed to use php and Javascript to send and recieve signature objects to and from a MySQL database.
+Due to this, development requires that you at least have MySQL and php installed. Apache is also helpful but not required. 
+The easiest way to get all of these set up is to install them as a package such as WAMP or MAMP if you are developing on a Mac. 
+
+### Schema
+create table signature_entry
+    (id int NOT NULL AUTO_INCREMENT
+    signature_timestamp timestamp,
+    status varchar(5),
+    image blob,
+    primary key (id));
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Licensing and Legal

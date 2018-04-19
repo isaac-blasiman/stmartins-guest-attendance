@@ -73,12 +73,14 @@ Due to this, development requires that you at least have MySQL and php installed
 The easiest way to get all of these set up is to install them as a package such as WAMP or MAMP if you are developing on a Mac. 
 
 ### Schema
+```MySQL
 create table signature_entry
     (id int NOT NULL AUTO_INCREMENT
     signature_timestamp timestamp,
     status varchar(5),
     image blob,
-    primary key (id));
+    primary key (id)); 
+```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Licensing and Legal

@@ -5,7 +5,7 @@ Repository for the Saint Martin Meal Attendance App.
 
 Welcome to the Saint Martin Meal Attendance App. This readme provides instructions for how to use the app to its fullest potential.
 
-### Purpose
+## Purpose
 
 The purpose of the app is to provide a framework to collect signatures of guests. Guests signing in do not need to set up an account but can 
 simply sign in by entering their signature. In some cases a checkmark or any other mark will do.
@@ -44,20 +44,27 @@ can click the green "checkmark" button on the bottom right to submit the signatu
 The portion of the app dedicated to viewing signature data can be accessed by clicking the "View Signatures" button in the main menu. Staff can
 use this page to see how many signatures have been entered into the system for a specific date range. The signature information is cross-tabbed
 by meal status (breakfast or lunch) and guest status (adult or child) with totals for each attribute and a grand total of all signatures (for both adults
-and children and for both times).
+and children and for both times.
 
 The "List of Signature Data" page has a form on the left side where the user can enter two dates. Data is collected from the time starting with the
 starting date and ending with the end date.
 
 To enter a starting date, click the "mm/dd/yyyy" text in the box next to "Enter a start date:" . A calendar
 popup will appear. Click the date on which you want the data to start being colected. To change the month, use the small arrows on either side of
-the month name (such as "January"). Or, click the month name (again, such as "January") to open a dialog that will let you change both the month
-and the year. To enter an ending date, do the same procedure as before, this time with the "mm/dd/yyyy" text in the box next to "Enter an end date:" .
+the month name (such as "January"). Or, click the month name (again, such as "January" to open a dialog that will let you change both the month
+and the year. To enter an ending date, do the same with the "mm/dd/yyyy" text in the box next to "Enter an end date:" .
 
 When you click the submit button, a cross-tab of data will appear. The columns show the number of signatures that have been entered for
 breakfast and lunch, and the right-most column shows the total number of signatures for both breakfast and lunch. The rows show the number of
 signatures for adult guests and child guests respectively, with the bottom row showing the sum total of both adult and child guests. The table cell
-in the bottom right, then, is the grand total of signatures signed during the time frame that you had selected.
+in the bottom right, then, is the grand total number of signatures signed during the time frame that was entered.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Developer Notes
+
+The branch send-signature-object has not been merged into master. This branch contains unfinished code that was intended to send a signature
+object from the front-end to the MySQL database.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Licensing and Legal

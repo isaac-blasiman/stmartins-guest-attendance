@@ -52,7 +52,12 @@ starting date and ending with the end date.
 To enter a starting date, click the "mm/dd/yyyy" text in the box next to "Enter a start date:" . A calendar
 popup will appear. Click the date on which you want the data to start being colected. To change the month, use the small arrows on either side of
 the month name (such as "January"). Or, click the month name (again, such as "January" to open a dialog that will let you change both the month
-and the year. To enter an ending date, do the same with the "mm/dd/yyyy"
+and the year. To enter an ending date, do the same with the "mm/dd/yyyy" text in the box next to "Enter an end date:" .
+
+When you click the submit button, a cross-tab of data will appear. The columns show the number of signatures that have been entered for
+breakfast and lunch, and the right-most column shows the total number of signatures for both breakfast and lunch. The rows show the number of
+signatures for adult guests and child guests respectively, with the bottom row showing the sum total of both adult and child guests. The table cell
+in the bottom right, then, is the grand total number of signatures signed during the time frame that was entered.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Licensing and Legal

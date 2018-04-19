@@ -80,7 +80,8 @@
                     console.log("SUCCESS!");
                 }
             }
-            xmlhttp.open("POST", "Create Signature - Adult.php?q=" + signatureObject.toString()); // Not sure how to pass the data here.
+            var jsonSignatureObject = JSON.stringify(signatureObject);
+            xmlhttp.open("POST", "Create Signature - Adult.php?q=" + jsonSignatureObject); // See attribution 1 at bottom of file.
         }
         
         // This function taken from signature_pad-master/signature_pad-master/example/js/app-modified.js,
@@ -119,3 +120,8 @@
     ?>
 
 </body>
+
+// Attributions
+
+// 1. URL: https://stackoverflow.com/questions/6937144/sending-javascript-object-to-php-via-ajax?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+// POSTED BY: https://stackoverflow.com/users/159319/jantimon

@@ -35,7 +35,7 @@
     <!-- and is therefore itself under the MIT license. ###-->
     <div id="signature-pad" class="signature-pad">
         <div class="signature-pad--body">
-            <canvas id="canvas"></canvas>
+            <canvas></canvas>
         </div>
         <div class="signature-pad--footer">
             <div class="signature-pad--actions">
@@ -46,22 +46,21 @@
                     <span>Please Sign Here / </span><br><span>Favor de Ingrese Aquí</span>
                 </div>
                 <div class="button-container">
-                    <button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png" onclick = "sendSignature()"><i class="fa fa-check" aria-hidden="true"></i></button>
+					<form method="post" action="Sign In.php"> <!-- See attribution 1 -->
+						<input id="id" name="id" visibility="hidden" value=0></input>
+						<input id="signature-timestamp" name="signature-timestamp" visibility="hidden"></input>
+						<input id="status" name="status" visibility="hidden"></input>
+						<input id="image" name="image" visibility="hidden"></input>
+						<button type="button" class="save badge badge-pill badge-success" id="round-checkbox" data-action="save-png" onclick="sendSignature()"><i class="fa fa-check" aria-hidden="true"></i></button>
+					</form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ### End of MIT Licensed content ### -->
-    
-    <!-- Link to MySqlJS functionality, allows us to push and pull from the MySQL DB using JavaScript -->
-    <script src="https://mysqljs.com/mysql.js"></script>
 
-    <!-- ### This content within this block is modified from code copyrighted 2018 by Szimon Novak under the MIT License, -->
-    <!-- and is therefore itself under the MIT license. ###-->
     <script src="signature_pad-master/signature_pad-master/example/js/signature_pad.js"></script>
     <script src="signature_pad-master/signature_pad-master/example/js/create-signature-object.js"></script> <!-- Added by Isaac Blasiman. -->
-    <script src="signature_pad-master/signature_pad-master/example/js/send-signature-entry.js"></script> <!-- Added by Isaac Blasiman. -->
-    <script src="signature_pad-master/signature_pad-master/example/js/app-modified.js"></script> <!-- This needs to be after the 'create-signature-object' and 'create-signature-entry' scripts, since it uses their functions' -->
+    <script src="signature_pad-master/signature_pad-master/example/js/app-modified.js"></script> <!-- This needs to be after the 'create-signature-object.js script, since it uses that script's functions' -->
     <!-- ### End of MIT Licensed content ### -->
     
     <script>
@@ -80,6 +79,7 @@
                     console.log("SUCCESS!");
                 }
             }
+			
             var jsonSignatureObject = JSON.stringify(signatureObject);
             xmlhttp.open("POST", "Create Signature - Adult.php?q=" + jsonSignatureObject); // See attribution 1 at bottom of file.
         }
@@ -100,28 +100,8 @@
             return new Blob([uInt8Array], { type: contentType });
         }
     </script>
-    <?php // Referencing https://www.w3schools.com/php/php_mysql_update.asp
-    $servername = "localhost";
-    $username = "root";
-    $password = "password";
-    $dbname = "meal_attendance";
-    
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-    }
-    
-    $sql = "INSERT INTO signature_entry (id, signature_timestamp, status, image) 
-    VALUES (" . $signatureObject.id . ", " . $signatureObject.timestamp . ", " . $signatureObject.status . ", " . $signatureObject.image . ")";
-    $result = $conn->query($sql);
-    $conn->close();
-    ?>
-
-	<!-- Attributions
-
-	// 1. URL: https://stackoverflow.com/questions/6937144/sending-javascript-object-to-php-via-ajax?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-	// POSTED BY: https://stackoverflow.com/users/159319/jantimon
-	-->
+    <!-- Attributions -->
+	<!-- 1. URL: https://stackoverflow.com/questions/2338942/access-a-javascript-variable-from-php -->
+	<!-- 	POSTED BY: https://stackoverflow.com/users/2273/pandincus -->
+	
 </body>

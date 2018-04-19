@@ -44,7 +44,7 @@ can click the green "checkmark" button on the bottom right to submit the signatu
 The portion of the app dedicated to viewing signature data can be accessed by clicking the "View Signatures" button in the main menu. Staff can
 use this page to see how many signatures have been entered into the system for a specific date range. The signature information is cross-tabbed
 by meal status (breakfast or lunch) and guest status (adult or child) with totals for each attribute and a grand total of all signatures (for both adults
-and children and for both times.
+and children and for both times).
 
 The "List of Signature Data" page has a form on the left side where the user can enter two dates. Data is collected from the time starting with the
 starting date and ending with the end date.

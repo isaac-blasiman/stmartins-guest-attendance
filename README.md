@@ -51,7 +51,7 @@ starting date and ending with the end date.
 
 To enter a starting date, click the "mm/dd/yyyy" text in the box next to "Enter a start date:" . A calendar
 popup will appear. Click the date on which you want the data to start being colected. To change the month, use the small arrows on either side of
-the month name (such as "January"). Or, click the month name (again, such as "January" to open a dialog that will let you change both the month
+the month name (such as "January"). Or, click the month name (again, such as "January") to open a dialog that will let you change both the month
 and the year. To enter an ending date, do the same with the "mm/dd/yyyy" text in the box next to "Enter an end date:" .
 
 When you click the submit button, a cross-tab of data will appear. The columns show the number of signatures that have been entered for
@@ -61,7 +61,7 @@ in the bottom right, then, is the grand total number of signatures signed during
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Developer Notes
+# Developer Notes
 
 The branch send-signature-object has not been merged into master. This branch contains unfinished code that was intended to send a signature
 object from the front-end to the MySQL database.

@@ -7,8 +7,8 @@ Welcome to the Saint Martin Meal Attendance App. This readme provides instructio
 
 ## Purpose
 
-The purpose of the app is to provide a framework to collect signatures of people. People signing in do not need to set up an account but can 
-simply sign in by entering their signature In some cases a checkmark or any other mark will do.
+The purpose of the app is to provide a framework to collect signatures of guests. Guests signing in do not need to set up an account but can 
+simply sign in by entering their signature. In some cases a checkmark or any other mark will do.
 
 ### Opening the Meal Attendance App
 

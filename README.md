@@ -5,7 +5,7 @@ Repository for the Saint Martin Meal Attendance App.
 
 Welcome to the Saint Martin Meal Attendance App. This readme provides instructions for how to use the app to its fullest potential.
 
-## Purpose
+### Purpose
 
 The purpose of the app is to provide a framework to collect signatures of guests. Guests signing in do not need to set up an account but can 
 simply sign in by entering their signature. In some cases a checkmark or any other mark will do.
@@ -70,7 +70,7 @@ object from the front-end to the MySQL database.
 ### Setup
 This project is designed to use php and Javascript to send and recieve signature objects to and from a MySQL database.
 Due to this, development requires that you at least have MySQL and php installed. Apache is also helpful but not required. 
-The easiest way to get all of these set up is to install them as a package such as WAMP or MAMP if you are developing on a Mac. 
+The easiest way to get all of these set up is to install them as a package such as WAMP or AMPPS (or MAMP if you are developing on a Mac). 
 
 ### Schema
 ```MySQL
@@ -83,6 +83,16 @@ create table signature_entry
 ```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Future Work
+
+### Finishing the Functionality
+
+The main piece of functionality that has not been finished is the sending of signatures to the database. The functionality that has been completed is
+in 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Licensing and Legal
 
 ## Bootstrap

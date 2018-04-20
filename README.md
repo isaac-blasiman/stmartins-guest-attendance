@@ -5,7 +5,7 @@ Repository for the Saint Martin Meal Attendance App.
 
 Welcome to the Saint Martin Meal Attendance App. This readme provides instructions for how to use the app to its fullest potential.
 
-## Purpose
+### Purpose
 
 The purpose of the app is to provide a framework to collect signatures of guests. Guests signing in do not need to set up an account but can 
 simply sign in by entering their signature. In some cases a checkmark or any other mark will do.
@@ -70,7 +70,7 @@ object from the front-end to the MySQL database.
 ### Setup
 This project is designed to use php and Javascript to send and recieve signature objects to and from a MySQL database.
 Due to this, development requires that you at least have MySQL and php installed. Apache is also helpful but not required. 
-The easiest way to get all of these set up is to install them as a package such as WAMP or MAMP if you are developing on a Mac. 
+The easiest way to get all of these set up is to install them as a package such as WAMP or AMPPS (or MAMP if you are developing on a Mac). 
 
 ### Schema
 ```MySQL
@@ -83,6 +83,37 @@ create table signature_entry
 ```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Future Work
+
+### Finishing the Functionality to Send to Database
+
+The main piece of functionality that has not been finished is the sending of signatures to the database. The functionality that has been completed is
+in "Create Signature - Adult.php" and "Create Signature - Adult.html" and is for sending signatures of guests with "adult" status. The functionality for
+sending signatures to the database needs completed for "adult" status guests and needs to be copied over to "Create Signature - Child.php" and
+"Create Signature - Chilld.html" .
+
+### List of Signatures Proper
+
+After the current scope of the project is finished, Saint Martins would be able to retrieve data showing the number of signatures that had been
+entered. It would be helpful for staff to be able to view a list of all the signatures themselves, preferrably for a date range. An issue for this
+functionality, #62, has been created.
+
+### Improve Security
+
+Right now, the PHP functions used to interact with the database use outdated methodology that is not very secure compared to more modern
+methods. This is not a grave concern right now since the users of the app would not have the time to access the source code for the project - they
+are quickly signing in (and in the case of Saint Martin's laptop device, they do not necessarily have access to the keyboard as well). However, it
+would be beneficial to rewrite the PHP functionality to use better methodology. A reference that has been looked into is
+http://www.binpress.com/tutorial/using-php-with-mysql-the-right-way/17 .
+
+### Adding Polish
+
+Parts of the app emphasize function over form. Although the app works, it may not look very "pretty" or could be clearer. Future tweaks to the app
+to make it "look better" and to make it clearer would be helpful.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Licensing and Legal
 
 ## Bootstrap

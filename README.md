@@ -91,7 +91,7 @@ create table signature_entry
 The main piece of functionality that has not been finished is the sending of signatures to the database. The functionality that has been completed is
 in "Create Signature - Adult.php" and "Create Signature - Adult.html" and is for sending signatures of guests with "adult" status. The functionality for
 sending signatures to the database needs completed for "adult" status guests and needs to be copied over to "Create Signature - Child.php" and
-"Create Signature - Chilld.html" .
+"Create Signature - Chilld.html" for "child" status guests..
 
 ### List of Signatures Proper
 
@@ -103,14 +103,15 @@ functionality, #62, has been created.
 
 Right now, the PHP functions used to interact with the database use outdated methodology that is not very secure compared to more modern
 methods. This is not a grave concern right now since the users of the app would not have the time to access the source code for the project - they
-are quickly signing in (and in the case of Saint Martin's laptop device, they do not necessarily have access to the keyboard as well). However, it
-would be beneficial to rewrite the PHP functionality to use better methodology. A reference that has been looked into is
-http://www.binpress.com/tutorial/using-php-with-mysql-the-right-way/17 .
+are quickly signing in (and in the case of Saint Martin's laptop device, they do not necessarily have access to the keyboard either). However, it
+would be beneficial to rewrite the PHP functionality to use better and more secure methodologies. A reference regarding improved PHP can be
+found here: http://www.binpress.com/tutorial/using-php-with-mysql-the-right-way/17 .
 
 ### Adding Polish
 
-Parts of the app emphasize function over form. Although the app works, it may not look very "pretty" or could be clearer. Future tweaks to the app
-to make it "look better" and to make it clearer would be helpful.
+Parts of the app emphasize function over form. Although those parts of the app work, they may not look very "pretty" . Other parts of the app could
+be displayed differently to make their data's meaning clearer. Future tweaks to the app to make it "look better" and to make it clearer would be
+helpful.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

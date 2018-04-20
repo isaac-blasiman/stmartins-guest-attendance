@@ -86,10 +86,31 @@ create table signature_entry
 
 # Future Work
 
-### Finishing the Functionality
+### Finishing the Functionality to Send to Database
 
 The main piece of functionality that has not been finished is the sending of signatures to the database. The functionality that has been completed is
-in 
+in "Create Signature - Adult.php" and "Create Signature - Adult.html" and is for sending signatures of guests with "adult" status. The functionality for
+sending signatures to the database needs completed for "adult" status guests and needs to be copied over to "Create Signature - Child.php" and
+"Create Signature - Chilld.html" .
+
+### List of Signatures Proper
+
+After the current scope of the project is finished, Saint Martins would be able to retrieve data showing the number of signatures that had been
+entered. It would be helpful for staff to be able to view a list of all the signatures themselves, preferrably for a date range. An issue for this
+functionality, #62, has been created.
+
+### Improve Security
+
+Right now, the PHP functions used to interact with the database use outdated methodology that is not very secure compared to more modern
+methods. This is not a grave concern right now since the users of the app would not have the time to access the source code for the project - they
+are quickly signing in (and in the case of Saint Martin's laptop device, they do not necessarily have access to the keyboard as well). However, it
+would be beneficial to rewrite the PHP functionality to use better methodology. A reference that has been looked into is
+http://www.binpress.com/tutorial/using-php-with-mysql-the-right-way/17 .
+
+### Adding Polish
+
+Parts of the app emphasize function over form. Although the app works, it may not look very "pretty" or could be clearer. Future tweaks to the app
+to make it "look better" and to make it clearer would be helpful.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

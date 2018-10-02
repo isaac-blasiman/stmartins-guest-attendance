@@ -43,7 +43,7 @@
 				<?php
 				$servername = "localhost";
 				$username = "root";
-				$password = "";
+				$password = "password";
 				$dbname = "meal_attendance";
 
 				// Create connection

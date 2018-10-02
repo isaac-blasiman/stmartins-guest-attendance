@@ -74,10 +74,8 @@ The easiest way to get all of these set up is to install them as a package such 
 
 ### Schema
 ```MySQL
-create database meal_attendance;
-
 create table signature_entry
-    (id int NOT NULL AUTO_INCREMENT,
+    (id int NOT NULL AUTO_INCREMENT
     signature_timestamp timestamp,
     status varchar(5),
     image blob,

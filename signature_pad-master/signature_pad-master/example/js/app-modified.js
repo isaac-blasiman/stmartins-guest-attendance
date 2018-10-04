@@ -2,6 +2,7 @@
 var wrapper = document.getElementById("signature-pad");
 var clearButton = wrapper.querySelector("[data-action=clear]");
 var savePNGButton = wrapper.querySelector("[data-action=save-png]");
+var sendToDatabase = wrapper.querySelector("[data-action=save-png]"); //Added by Matthew Babb for expanded functionality
 var canvas = wrapper.querySelector("canvas");
 var signaturePad = new SignaturePad(canvas, {
   // It's Necessary to use an opaque color when saving image as JPEG;
@@ -85,4 +86,16 @@ savePNGButton.addEventListener("click", function (event) {
     var dataURL = signaturePad.toDataURL();
     download(dataURL, "signature.png");
   }
+});
+
+//sendToDatabase function written by Matthew Babb as expanded functionality for signature pad
+//Included under the original MIT License for the signature pad
+sendToDatabase.addEventListener("click", function (event) {
+  //This should be the place to write to database instead of saving a png, utilizing dataURLToBlob function above
+  //var dataURL = SignaturePad.toDataURL();
+  //var sigImg = dataURLToBlob(dataURL);
+  //Shortened to [below]
+  //var imgBlob = dataURLToBlob(signaturePad.toDataURL());
+  //Call PHP to access/write to database
+  alert("Working Function");
 });

@@ -55,7 +55,7 @@
 
 				$sql = "SELECT * FROM signature_entry";
 				$result = $conn->query($sql);
-
+				
 				$adultBreakfast = 0;
 				$adultLunch = 0;
 				$childBreakfast = 0;

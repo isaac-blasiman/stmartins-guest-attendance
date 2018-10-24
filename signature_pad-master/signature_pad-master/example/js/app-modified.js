@@ -2,7 +2,6 @@
 var wrapper = document.getElementById("signature-pad");
 var clearButton = wrapper.querySelector("[data-action=clear]");
 var savePNGButton = wrapper.querySelector("[data-action=save-png]");
-var sendToDatabase = wrapper.querySelector("[data-action=save-png]"); //Added by Matthew Babb for expanded functionality
 var canvas = wrapper.querySelector("canvas");
 var signaturePad = new SignaturePad(canvas, {
   // It's Necessary to use an opaque color when saving image as JPEG;
@@ -47,12 +46,14 @@ function download(dataURL, filename) {
   a.download = filename;
 
   document.body.appendChild(a);
-  a.click();
+  //a.click(); //Uncommenting this allows the png file to be saved locally
 
   // We need to send the blob and associated data to the database
   var siteURL = window.location.href;
   var signature_status = getSignatureStatus(siteURL); // Determines whether the signature is for an adult or for a child
   var signature_entry = createDataObject(signature_status, blob);
+
+  //AJAX or something to send signature_entry to PHP
 
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
@@ -79,23 +80,12 @@ clearButton.addEventListener("click", function (event) {
   signaturePad.clear();
 });
 
-savePNGButton.addEventListener("click", function (event) {
+savePNGButton.addEventListener("click"
+, function (event) {
   if (signaturePad.isEmpty()) {
     alert("Please provide a signature first.");
   } else {
     var dataURL = signaturePad.toDataURL();
     download(dataURL, "signature.png");
   }
-});
-
-//sendToDatabase function written by Matthew Babb as expanded functionality for signature pad
-//Included under the original MIT License for the signature pad
-sendToDatabase.addEventListener("click", function (event) {
-  //This should be the place to write to database instead of saving a png, utilizing dataURLToBlob function above
-  //var dataURL = SignaturePad.toDataURL();
-  //var sigImg = dataURLToBlob(dataURL);
-  //Shortened to [below]
-  //var imgBlob = dataURLToBlob(signaturePad.toDataURL());
-  //Call PHP to access/write to database
-  alert("Working Function");
 });

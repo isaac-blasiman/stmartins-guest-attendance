@@ -60,6 +60,10 @@
 				$adultLunch = 0;
 				$childBreakfast = 0;
 				$childLunch = 0;
+				$adultBreakfastList = [];
+				$childBreakfastList = [];
+				$adultLunchList = [];
+				$childLunchList = [];
 
 				if ($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) {
@@ -68,17 +72,21 @@
 							if ($row["status"] == "adult") {
 								if (date('H', $date) < 12) {
 									$adultBreakfast ++;
+									array_push($adultBreakfastList, $row["image"]);
 								}
 								else {
 									$adultLunch ++;
+									array_push($adultLunchList, $row["image"]);
 								}
 							}
 							else if ($row["status"] == "child") {
 								if (date('H', $date) < 12) {
 									$childBreakfast ++;
+									array_push($childBreakfastList, $row["image"]);
 								}
 								else {
 									$childLunch ++;
+									array_push($childLunchList, $row["image"]);
 								}
 							}
 						}
@@ -118,12 +126,97 @@
 							<td>" . $lunch . "</td>
 							<td>" . $total . "</td>
 						</tr>
-					</table>";
+					</table><br>";
 				$conn->close();
 				?>
             </div>
         </div> <!-- End of row -->
     </div> <!-- End of container -->
+	<?php
+	
+		//Column headers with status
+		echo '<br>
+		<div class="row"> <div class="col-12 text-center font-weight-bold">B R E A K F A S T</div></div>
+		<div class="row">
+			<div class="col-5 text-center font-weight-bold">Adults</div>
+			<div class="col-2 text-center font-weight-bold">Number</div>
+			<div class="col-5 text-center font-weight-bold">Children</div>
+		</div>
+		';
+		
+		//Which group has more breakfast signatures
+		if ($childBreakfast > $adultBreakfast)
+		{
+			$maxBreakfast = $childBreakfast;
+		}
+		else 
+		{
+			$maxBreakfast = $adultBreakfast;
+		}
+		
+		//Loop to display all signatures for meals
+		for($count = 1; $count <= $maxBreakfast; $count++)
+		{
+			echo '<div class="row">
+			<div class="col-5 text-center">';
+			if($count <= $adultBreakfast)
+			{
+				echo '<img src="'.$adultBreakfastList[$count-1].'" width="90%" height="auto"/>';
+			}
+			echo'</div>
+			<div class="col-2 text-center font-weight-bold">'.$count.'</div>
+			<div class="col-5 text-center">';
+			if($count <= $childBreakfast)
+			{
+				echo '<img src="'.$childBreakfastList[$count-1].'" width="90%" height="auto"/>';
+			}
+			echo'</div>
+		</div>
+			<div class="row"> <div class="col-12"><br></div> </div>
+		';
+		}
+		
+		echo '<br><br><br>
+		<div class="row"> <div class="col-12 text-center font-weight-bold">L U N C H</div></div>
+		<div class="row">
+			<div class="col-5 text-center font-weight-bold">Adults</div>
+			<div class="col-2 text-center font-weight-bold">Number</div>
+			<div class="col-5 text-center font-weight-bold">Children</div>
+		</div>
+		';
+		
+		//Which group has more breakfast signatures
+		if ($childLunch > $adultLunch)
+		{
+			$maxLunch = $childLunch;
+		}
+		else 
+		{
+			$maxLunch = $adultLunch;
+		}
+		
+		//Loop to display all signatures for meals
+		for($count = 1; $count <= $maxLunch; $count++)
+		{
+			echo '<div class="row">
+			<div class="col-5 text-center">';
+			if($count <= $adultLunch)
+			{
+				echo '<img src="'.$adultLunchList[$count-1].'" width="90%" height="auto"/>';
+			}
+			echo'</div>
+			<div class="col-2 text-center font-weight-bold">'.$count.'</div>
+			<div class="col-5 text-center">';
+			if($count <= $childLunch)
+			{
+				echo '<img src="'.$childLunchList[$count-1].'" width="90%" height="auto"/>';
+			}
+			echo'</div> 
+		</div>
+			<div class="row"> <div class="col-12"><br></div> </div>
+		';
+		}
+	?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

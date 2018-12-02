@@ -118,6 +118,31 @@ body {
     margin-bottom: 10px;
 }
 
+
+table{
+	border: 2px solid black;
+	border-collapse: collapse;
+	vertical-align: middle;
+	text-align: center;
+	width:100%;
+}
+
+th{
+	height: 35px;
+}
+
+th, td{
+	border: 2px solid black;
+	border-collapse: collapse;
+	vertical-align: middle;
+	text-align: center;
+	padding: 15px;
+}
+
+td:nth-child(even){
+	background-color: #ddccff;
+}
+
 #wrapper{
     margin: 0 50px;
 }

@@ -37,6 +37,8 @@ window.onresize = resizeCanvas;
 resizeCanvas();
 
 function download(dataURL, filename) {
+  /*These two lines are currently unused, they create a javascript Blob
+  for use within the file, NOT for sending. These are importnat in being able to download a png.*/
   var blob = dataURLToBlob(dataURL);
   var url = window.URL.createObjectURL(blob);
 
@@ -46,18 +48,38 @@ function download(dataURL, filename) {
   a.download = filename;
 
   document.body.appendChild(a);
-  //a.click(); //Uncommenting this allows the png file to be saved locally
+  //a.click(); //Commenting/uncommenting this allows the png file to be saved locally
 
   // We need to send the blob and associated data to the database
   var siteURL = window.location.href;
   var signature_status = getSignatureStatus(siteURL); // Determines whether the signature is for an adult or for a child
-  var signature_entry = createDataObject(signature_status, blob);
+  dataURL = encodeURIComponent(dataURL); //Ensures safe transmission of data without mutation or truncating
+  var signature_entry = createDataObject(signature_status, dataURL); //Prepares a JavaScript object
 
-  //AJAX or something to send signature_entry to PHP
+  console.log(signature_entry);
+
+  //Create an HTTP request to transmit data to the server
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function()
+  {
+      if (this.readyState == 4 && this.status == 200) {
+          console.log("SUCCESS!");
+          window.location.assign("Sign%20In.html"); // Untested, but works when you do it manually
+      }
+  }
+
+  //Covnert JavaScript object to JSON string
+  var jsonSignatureObject = "sig="+JSON.stringify(signature_entry);
+  console.log(jsonSignatureObject);
+
+  //Perform data send
+  xmlhttp.open("POST", "sendToDatabase.php");
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send(jsonSignatureObject);
 
   window.URL.revokeObjectURL(url);
   signaturePad.clear(); // Added because sometimes the signature area does not clear after you click the checkbox.
-  window.location.assign("Sign%20In.html"); // Untested, but works when you do it manually
+
 }
 
 // One could simply use Canvas#toBlob method instead, but it's just to show

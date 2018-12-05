@@ -3,7 +3,7 @@ Repository for the Saint Martin Meal Attendance App.
 
 # Instructions
 
-Welcome to the Saint Martin Meal Attendance App. This readme provides instructions for how to use the app to its fullest potential.
+Welcome to the Saint Martin Meal Attendance App. This readme provides instructions for how to use the app to its fullest potential. Watch a tutorial here: https://youtu.be/PYE65eUXmUU
 
 ### Purpose
 
